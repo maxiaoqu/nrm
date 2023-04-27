@@ -1,0 +1,8 @@
+.*
+*.md
+*.yml
+gulpfile.js
+node_modules
+test
+build
+npmjs

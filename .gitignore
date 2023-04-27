@@ -1,18 +1,55 @@
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-.idea/**
-pids
-logs
-results
+# macbook file
+.DS_Store
+__MACOSX
 
-.vscode
-npm-debug.log
+# flie path
 node_modules
-TODO.md
+dist
+esm
+aio
+example
+test
+
+# webpack file
 package-lock.json
+yarn.lock
+yarn-error.log
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+npm-debug.log
+
+# Editor directories and files
+.idea
+.ipr
+.iws
+.vscode
+.project
+.svn
+.build
+.settings
+.cache
+*~
+~*
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+*.iml
+*.log
+*.log.*
+*.diff
+*.patch
+*.bak
+*.swp
+*.swo
+*.pyc
+*.pyo
+.*proj

@@ -1,17 +1,17 @@
-# nrm--NPM注册表管理器
+# nrm -- NPM registry manager
 
-- 本仓库借鉴于 [官方仓库：https://github.com/Pana/nrm](https://github.com/Pana/nrm)
-- [English](./README-EN.md) | 简体中文
+- This warehouse use for reference from [Official Warehouse：https://github.com/Pana/nrm](https://github.com/Pana/nrm)
+- [简体中文](./README.md) | English
 
-## 一、安装
+## No1、Install
 
 ```shell
 $ npm install invm -g
 ```
 
-## 二、使用说明
+## No2、Instructions
 
-- 1、您可以使用 nvm xxx
+- 1、You can use 'nvm xxx'
 
 ```shell
 $ nvm ls
@@ -21,7 +21,7 @@ $ nvm test
 $ nvm now
 ```
 
-- 2、您也可以使用 inrm xxx
+- 2、You also can use 'inrm xxx'
 
 ```shell
 $ inrm ls
@@ -31,12 +31,12 @@ $ inrm test
 $ inrm now
 ```
 
-## 三、示例说明
+## No3、Example
 
-- 以下示例以 nvm 这个命令为例
-- 您也可以使用 invm 这个命令进行
+- The following example takes the 'nvm' command this example
+- You also can use the 'invm' command to
 
-### 3.1、查看帮助：（nrm 或 nrm -h）
+### 3.1、output usage information：（'nrm' or 'nrm -h'）
 
 ```
 $ nrm
@@ -44,28 +44,28 @@ $ nrm
 Usage: nrm [options] [command]
 
 Options:
-  -v, --version              输出当前插件的版本号
-  -h, --help                 显示前插件命令的帮助
+  -v, --version              Output the version number
+  -h, --help                 Output usage information
 
 Commands:
-  ls|list                    列出所有镜像源
-  add <name> <url> [home]    添加自定义镜像源
-  use <name>                 使用指定名称的镜像源
-  rename <name> <newName>    更改自定义镜像源名称
-  ping|test [name]           显示指定镜像源的响应时间，默认所有镜像源
-   del|delete <name>         删除指定镜像源
-  home <registry> [browser]  在选浏览器打开镜像源主页
-  set <manager-name> <name>  给其他包管理器设置镜像源，如: npm、yarn、cnpm、pnpm
-  now [manager-name]         显示包管理器当前使用的镜像源, 默认所有包管理器
+  ls|list                    List all the registries
+  add <name> <url> [home]    Add one custom registry
+  use <name>                 Change registry to registry
+  rename <name> <newName>    Set custom registry name
+  ping|test [name]           Show the response time for one or all registries, default to all registries
+  del|delete <name>          Delete one custom registry
+  home <registry> [browser]  Open the homepage of registry with optional browser
+  set <manager-name> <name>  Set the registries for other package managers，like: npm、yarn、cnpm、pnpm
+  now [manager-name]         Display the registries used by the package manager, default to all package managers
 ```
 
-### 3.2、列出所有镜像源（nrm ls 或 nrm list）
+### 3.2、List all the registries（'nrm ls' or 'nrm list'）
 
 ```
 $ nrm list
 
 ┌──────┬────────────┬──────────────────────────────────────────────┐
-│ 状态  │ 镜像源名称   │ 镜像源地址                                     │
+│ used │  name      │ registries url                               │
 ├──────┼────────────┼──────────────────────────────────────────────┤
 │  *   │ npm        │ https://registry.npmjs.org/                  │
 │  -   │ cnpm       │ https://registry.npmmirror.com/              │
@@ -78,7 +78,7 @@ $ nrm list
 └──────┴────────────┴──────────────────────────────────────────────┘
 ```
 
-### 3.3、添加自定义镜像源（nrm add）
+### 3.3、Add one custom registry（nrm add）
 
 ```
 $ nrm add yourName http://www.your-registry.com/
@@ -86,7 +86,7 @@ $ nrm add yourName http://www.your-registry.com/
 成功：  添加注册表 yourName 成功，运行 nrm use yourName 命令以使用yourName镜像源!
 ```
 
-### 3.4、使用指定名称的镜像源（nrm use）
+### 3.4、Change registry to registry（nrm use）
 
 ```
 $ nrm use yourName
@@ -94,7 +94,7 @@ $ nrm use yourName
  成功：  镜像源已更改为yourName
 ```
 
-### 3.5、更改自定义镜像源名称（nrm rename）
+### 3.5、Set custom registry name（nrm rename）
 
 ```
 $ nrm rename yourName myName
@@ -102,15 +102,15 @@ $ nrm rename yourName myName
  成功：  镜像源名称从 yourName 更改为 myName
 ```
 
-### 3.6、显示指定镜像源的响应时间，默认所有镜像源（nrm ping 或 nrm test）
+### 3.6、Show the response time for one or all registries, default to all registries（'nrm ping' or' nrm test'）
 
-- 1、默认所有镜像源
+- 1、default to all registries
 
 ```
 $ nrm ping
 
 ┌──────┬────────────┬────────────────────────────────────────────────┐
-│ 状态  │ 镜像源名称   │ 镜像源响应时间                                   │
+│ used │ name       │ response time                                  │
 ├──────┼────────────┼────────────────────────────────────────────────┤
 │  -   │ npm        │ 896 ms                                         │
 │  -   │ cnpm       │ 132 ms                                         │
@@ -124,21 +124,21 @@ $ nrm ping
 └──────┴────────────┴────────────────────────────────────────────────┘
 ```
 
-- 2、npm镜像源
+- 2、npm registries
 
 ```
 $ nrm ping npm
 
 ┌──────┬────────────┬────────────────────────────────────────────────┐
-│ 状态  │ 镜像源名称   │ 镜像源响应时间                                   │
+│ used │ name       │ response time                                  │
 ├──────┼────────────┼────────────────────────────────────────────────┤
 │  -   │ npm        │ 896 ms                                         │
 └──────┴────────────┴────────────────────────────────────────────────┘
 ```
 
-### 3.7、删除指定镜像源（nrm del 或 nrm delete）
+### 3.7、Delete one custom registry（'nrm del' or 'nrm delete）
 
-- 删除正在使用的镜像源时
+- Delete used registry
 
 ```
 $ nrm del myName
@@ -147,7 +147,7 @@ $ nrm del myName
  成功：  镜像源已更改为'npm'
 ```
 
-- 删除其他镜像源时
+- Delete other registry
 
 ```
 $ nrm del myName
@@ -155,7 +155,7 @@ $ nrm del myName
  成功：  已成功删除镜像源myName
 ```
 
-### 3.8、在选浏览器打开镜像源主页（nrm home）
+### 3.8、Open the homepage of registry with optional browser（nrm home）
 
 ```
 $ nrm home npm
@@ -163,7 +163,7 @@ $ nrm home npm
  成功：  正在打开当前镜像源主页，请看浏览器！
 ```
 
-### 3.9、给其他包管理器设置镜像源，如: npm、yarn、cnpm、pnpm（nrm set）
+### 3.9、Set the registries for other package managers，like: npm、yarn、cnpm、pnpm（nrm set）
 
 ```
 $ nrm set yarn yarn
@@ -171,15 +171,15 @@ $ nrm set yarn yarn
  成功：  yarn 包管理器的镜像源设置成 https://registry.npmmirror.com/
 ```
 
-### 3.10、显示包管理器当前使用的镜像源, 默认所有包管理（nrm now）
+### 3.10、Display the registries used by the package manager, default to all package managers（nrm now）
 
-- 1、默认所有包管理
+- 1、 default to all package managers
 
 ```
 $ nrm now
 
 ┌──────┬──────────┬───────────────────────────────┐
-│ 状态  │ 包管理器  │ 包管理器镜像源                   │
+│ used │ package  │ package managers              │
 ├──────┼──────────┼───────────────────────────────┤
 │  ×   │ cnpm     │ -                             │
 │  ×   │ pnpm     │ -                             │
@@ -188,19 +188,19 @@ $ nrm now
 └──────┴──────────┴───────────────────────────────┘
 ```
 
-- 2、yarn包管理
+- 2、yarn package managers
 
 ```
 $ nrm now yarn
 
 ┌──────┬──────────┬───────────────────────────────┐
-│ 状态  │ 包管理器  │ 包管理器镜像源                   │
+│ used │ package  │ package managers              │
 ├──────┼──────────┼───────────────────────────────┤
 │  √   │ yarn     │ https://registry.yarnpkg.com/ │
 └──────┴──────────┴───────────────────────────────┘
 ```
 
-## 四、镜像源
+## No4、Registries
 
 * [npm](https://www.npmjs.org)
 * [cnpm](https://npmmirror.com)
@@ -211,6 +211,6 @@ $ nrm now yarn
 * [github](https://npm.pkg.github.com/)
 * [ustc](https://mirrors.ustc.edu.cn/help/npm.html)
 
-## 五、许可证
+## No5、LICENSE
 
 MIT

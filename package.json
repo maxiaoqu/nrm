@@ -1,35 +1,45 @@
 {
-  "name": "nrm",
-  "version": "1.2.5",
-  "description": "NPM registry manager can help you easy and fast switch between different npm registries, now include: cnpm, taobao, nj(nodejitsu), edunpm",
-  "bin": "./cli.js",
+  "name": "invm",
+  "version": "0.0.1",
+  "description": "Npm镜像源管理器可以帮助您在不同的镜像源之间轻松快速地切换、以及给镜像源管理器更换默认的镜像源",
+  "author": "maxiaoqu",
+  "publisher": "maxiaoqu@gmail.com",
+  "license": "MIT",
+  "bin": {
+    "nrm": "lib/cli.js",
+    "inrm": "lib/cli.js"
+  },
+  "keywords": [
+    "nrm",
+    "npm",
+    "registry"
+  ],
+  "files": [
+    "lib",
+    "README-EN.md"
+  ],
+  "homepage": "www.maxiaoqu.com",
+  "bugs": {
+    "url": "https://github.com/maxiaoqu/nrm/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Pana/nrm.git"
+    "url": "https://github.com/maxiaoqu/nrm.git"
   },
   "scripts": {
     "star": "npm star nrm",
-    "test": "jest"
+    "init": "npm run un && npm run in",
+    "in": "npm publish",
+    "un": "npm unpublish @ibro/nrm --force"
   },
-  "keywords": [
-    "NPM",
-    "registry"
-  ],
-  "author": "Pana",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Pana/nrm/issues"
-  },
-  "homepage": "https://github.com/Pana/nrm",
   "dependencies": {
     "chalk": "^4.1.2",
-    "commander": "^8.3.0",
-    "ini": "^2.0.0",
-    "node-fetch": "2.6.6",
-    "open": "^8.4.0"
+    "child_process": "^1.0.2",
+    "commander": "^10.0.1",
+    "console-grid": "^2.0.1",
+    "ini": "^4.1.0",
+    "node-fetch": "^2.6.9",
+    "open": "^8.4.2"
   },
-  "devDependencies": {
-    "coffee": "^5.4.0",
-    "jest": "^27.4.0"
-  }
+  "devDependencies": {}
 }
