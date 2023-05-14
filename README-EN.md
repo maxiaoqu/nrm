@@ -6,19 +6,19 @@
 ## No1、Install
 
 ```shell
-$ npm install invm -g
+$ npm install inrm -g
 ```
 
 ## No2、Instructions
 
-- 1、You can use 'nvm xxx'
+- 1、You can use 'nrm xxx'
 
 ```shell
-$ nvm ls
-$ nvm list
-$ nvm ping
-$ nvm test
-$ nvm now
+$ nrm ls
+$ nrm list
+$ nrm ping
+$ nrm test
+$ nrm now
 ```
 
 - 2、You also can use 'inrm xxx'
@@ -33,8 +33,8 @@ $ inrm now
 
 ## No3、Example
 
-- The following example takes the 'nvm' command this example
-- You also can use the 'invm' command to
+- The following example takes the 'nrm' command this example
+- You also can use the 'inrm' command to
 
 ### 3.1、output usage information：（'nrm' or 'nrm -h'）
 
